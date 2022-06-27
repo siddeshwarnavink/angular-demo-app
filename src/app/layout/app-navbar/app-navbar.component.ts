@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { PostService } from 'src/app/post/post.service';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './app-navbar.component.html',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppNavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(public postService: PostService) { }
 
   ngOnInit(): void {
   }

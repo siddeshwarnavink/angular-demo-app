@@ -1,0 +1,16 @@
+<app-modal [isOpen]="isModalOpen" (onClose)="toggleModalHandler()">
+    <h3>Create post</h3>
+    <app-post-editor (onCancel)="toggleModalHandler()" (onSubmit)="toggleModalHandler()"></app-post-editor>
+</app-modal>
+
+<app-spinner *ngIf="postService.postLoading"></app-spinner>
+
+<app-post-list *ngIf="!postService.postLoading">
+    <div *ngFor="let postItem of postService.getPosts()" [@flyInOut]="'in'">
+        <app-post-item [id]="postItem.id" [title]="postItem.title" [content]="postItem.content"
+            [isFav]="postItem.isFav ? true : false">
+        </app-post-item>
+    </div>
+</app-post-list>
+
+<app-button [fab]="true" (onClick)="toggleModalHandler()">+</app-button>

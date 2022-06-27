@@ -6,6 +6,10 @@
                 <p>{{ content }}</p>
                 <app-button (onClick)="toggleEditHandler()">Edit</app-button>
                 <app-button (onClick)="deletePostHandler()" theme="danger" [flat]="true">Delete</app-button>
+                <app-button (onClick)="markAsFavPostHandler()" [flat]="true">
+                    <span *ngIf="!isFav">⭐</span>
+                    <span *ngIf="isFav">❌</span>
+                </app-button>
             </div>
             <div class="edit-post">
                 <app-post-editor [postId]="this.id" (onCancel)="toggleEditHandler()" (onSubmit)="toggleEditHandler()">

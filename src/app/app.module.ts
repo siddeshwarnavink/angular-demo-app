@@ -14,6 +14,10 @@ import { PostEditorComponent } from './post/post-editor/post-editor.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SpinnerComponent } from './ui/spinner/spinner.component';
+import { AppRoutingModule } from './app-routing.module';
+import { FavoritesComponent } from './pages/favorites/favorites.component';
+import { HomeComponent } from './pages/home/home.component';
+import { PostListComponent } from './post/post-list/post-list.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +29,17 @@ import { SpinnerComponent } from './ui/spinner/spinner.component';
     ModalComponent,
     BackdropComponent,
     PostEditorComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    FavoritesComponent,
+    HomeComponent,
+    PostListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [
     PostService

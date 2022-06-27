@@ -2,7 +2,17 @@
     <h1>angular-demo-app</h1>
 
     <div class="navigation">
-        <a class="navigation-item active" href="#">Home</a>
-        <a class="navigation-item" href="#">Favorites</a>
+        <a class="navigation-item" routerLinkActive="active" ariaCurrentWhenActive="page" routerLink="/home">
+            Home
+            <span *ngIf="postService.getPosts().length > 0">
+                ({{postService.getPosts().length}})
+            </span>
+        </a>
+        <a class="navigation-item" routerLinkActive="active" ariaCurrentWhenActive="page" routerLink="/favorites">
+            Favorites
+            <span *ngIf="postService.getFavPosts().length > 0">
+                ({{postService.getFavPosts().length}})
+            </span>
+        </a>
     </div>
 </div>

@@ -1,17 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { Post } from '../interface/Post';
+import { Post } from '../shared/interface';
 
 @Injectable()
 export class PostService {
   private baseURL: string = "https://jsonplaceholder.typicode.com";
 
   postLoading = false;
-  postList: Post[] = [
-    { id: 1, title: 'Hello', content: 'my awesome content' },
-    { id: 2, title: 'Hello again', content: 'nothing to see here :(' },
-  ];
+  postList: Post[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -26,7 +23,8 @@ export class PostService {
           this.postList = response.slice(0, 10).map((responseItem) => {
             return {
               ...responseItem,
-              content: responseItem.body
+              content: responseItem.body,
+              isFav: false
             }
           })
         }
@@ -34,7 +32,15 @@ export class PostService {
   }
 
   getPosts() {
-    return this.postList;
+    return this.postList.filter(postItem => {
+      return !postItem.isFav;
+    });
+  }
+
+  getFavPosts() {
+    return this.postList.filter(postItem => {
+      return postItem.isFav;
+    });
   }
 
   editPost(postId: Number, newPost: Post) {
@@ -44,7 +50,7 @@ export class PostService {
 
     this.postList[editPostIndex] = {
       ...newPost,
-      id: this.postList[editPostIndex].id
+      id: this.postList[editPostIndex].id,
     }
 
     this.http.patch(`${this.baseURL}/posts/${postId}`, {
@@ -82,5 +88,16 @@ export class PostService {
 
         this.postList[0].id = response.id;
       });
+  }
+
+  toggleFav(postId: number) {
+    const editPostIndex = this.postList.findIndex(postItem => {
+      return postItem.id === postId;
+    });
+
+    this.postList[editPostIndex] = {
+      ...this.postList[editPostIndex],
+      isFav: !this.postList[editPostIndex].isFav
+    }
   }
 }

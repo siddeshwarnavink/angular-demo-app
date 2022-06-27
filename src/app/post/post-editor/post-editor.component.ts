@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { PostService } from '../post.service';
-import { Post } from '../../interface/Post';
+import { Post } from '../../shared/interface';
 
 @Component({
   selector: 'app-post-editor',

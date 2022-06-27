@@ -10,12 +10,12 @@
 
 .toolbar .navigation {
     display: flex;
-    margin: auto;
-    max-width: 10vw;
+    width: 100%;
+    justify-content: center;
 }
 
 .navigation .navigation-item {
-    padding: 10px 12px;   
+    padding: 10px 12px;
     text-decoration: none;
     cursor: pointer;
     outline: none;

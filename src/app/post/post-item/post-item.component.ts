@@ -10,6 +10,7 @@ export class PostItemComponent {
   @Input() id!: number;
   @Input() title!: String;
   @Input() content!: String;
+  @Input() isFav = false;
 
   isEditing = false;
 
@@ -29,6 +30,10 @@ export class PostItemComponent {
 
   deletePostHandler() {
     this.postService.deletePost(this.id);
+  }
+
+  markAsFavPostHandler() {
+    this.postService.toggleFav(this.id);
   }
 
 }

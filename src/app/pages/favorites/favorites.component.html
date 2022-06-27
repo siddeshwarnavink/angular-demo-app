@@ -1,0 +1,7 @@
+<app-post-list class="post-list">
+    <div *ngFor="let postItem of postService.getFavPosts()" [@flyInOut]="'in'">
+        <app-post-item [id]="postItem.id" [title]="postItem.title" [content]="postItem.content"
+            [isFav]="postItem.isFav ? true : false">
+        </app-post-item>
+    </div>
+</app-post-list>
