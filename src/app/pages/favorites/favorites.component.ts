@@ -7,7 +7,6 @@ import { flyInOut } from 'src/app/shared/animations';
 @Component({
   selector: 'app-favorites',
   templateUrl: './favorites.component.html',
-  styleUrls: ['./favorites.component.css'],
   animations: [
     trigger('flyInOut', flyInOut)
   ]
