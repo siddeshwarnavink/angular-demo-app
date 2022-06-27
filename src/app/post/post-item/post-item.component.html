@@ -1,20 +1,21 @@
-<div class="post-item-card">
-    <li class="post-item" [ngClass]="{editing: isEditing}">
-        <div class="post-item-wrapper">
-            <div class="post-detail">
-                <h2>{{ title }}</h2>
-                <p>{{ content }}</p>
-                <app-button (onClick)="toggleEditHandler()">Edit</app-button>
-                <app-button (onClick)="deletePostHandler()" theme="danger" [flat]="true">Delete</app-button>
-                <app-button (onClick)="markAsFavPostHandler()" [flat]="true">
-                    <span *ngIf="!isFav">⭐</span>
-                    <span *ngIf="isFav">❌</span>
-                </app-button>
-            </div>
-            <div class="edit-post">
-                <app-post-editor [postId]="this.id" (onCancel)="toggleEditHandler()" (onSubmit)="toggleEditHandler()">
-                </app-post-editor>
-            </div>
+<mat-card class="post-item">
+    <mat-card-title>{{ title }}</mat-card-title>
+    <mat-card-content>
+        <div *ngIf="!isEditing">
+            {{content}}
         </div>
-    </li>
-</div>
+        <div *ngIf="isEditing">
+            <app-post-editor [postId]="this.id" (onCancel)="toggleEditHandler()" (onSubmit)="toggleEditHandler()">
+            </app-post-editor>
+        </div>
+    </mat-card-content>
+
+    <mat-card-actions *ngIf="!isEditing">
+        <button mat-raised-button color="primary" (click)="toggleEditHandler()">Edit</button>
+        <button mat-button (click)="deletePostHandler()">Delete</button>
+        <button mat-button (click)="markAsFavPostHandler()">
+            <span *ngIf="!isFav">⭐</span>
+            <span *ngIf="isFav">❌</span>
+        </button>
+    </mat-card-actions>
+</mat-card>

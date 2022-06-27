@@ -20,6 +20,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { PostListComponent } from './post/post-list/post-list.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 
     // Angular-material modules
     MatToolbarModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [
     PostService
