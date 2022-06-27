@@ -1,10 +1,16 @@
-<li class="post-item">
-    <div *ngIf="!isEditing">
-        <span class="post-title">{{ title }}</span>
-        <p class="post-content">{{ content }}</p>
-
-        <app-button (onClick)="toggleEditHandler()">Edit</app-button>
-        <app-button (onClick)="deletePostHandler()" theme="danger" [flat]="true">Delete</app-button>
-    </div>
-    <app-post-editor *ngIf="isEditing" [postId]="this.id" (onCancel)="toggleEditHandler()"></app-post-editor>
-</li>
+<div class="post-item-card">
+    <li class="post-item" [ngClass]="{editing: isEditing}">
+        <div class="post-item-wrapper">
+            <div class="post-detail">
+                <h2>{{ title }}</h2>
+                <p>{{ content }}</p>
+                <app-button (onClick)="toggleEditHandler()">Edit</app-button>
+                <app-button (onClick)="deletePostHandler()" theme="danger" [flat]="true">Delete</app-button>
+            </div>
+            <div class="edit-post">
+                <app-post-editor [postId]="this.id" (onCancel)="toggleEditHandler()" (onSubmit)="toggleEditHandler()">
+                </app-post-editor>
+            </div>
+        </div>
+    </li>
+</div>

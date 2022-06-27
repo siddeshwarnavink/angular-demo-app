@@ -14,10 +14,14 @@ export class PostService {
   }
 
   editPost(postId: Number, newPost: Post) {
-    this.postList = this.postList.map(postItem => {
-      if (postItem.id !== postId) return postItem;
-      return newPost;
+    const editPostIndex = this.postList.findIndex(postItem => {
+      return postItem.id === postId;
     });
+
+    this.postList[editPostIndex] = {
+      ...newPost,
+      id: this.postList[editPostIndex].id
+    }
   }
 
   deletePost(postId: Number) {
