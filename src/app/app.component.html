@@ -4,7 +4,9 @@
         <app-post-editor (onCancel)="toggleModalHandler()" (onSubmit)="toggleModalHandler()"></app-post-editor>
     </app-modal>
 
-    <ul class="post-list">
+    <app-spinner *ngIf="postService.postLoading"></app-spinner>
+
+    <ul *ngIf="!postService.postLoading" class="post-list">
         <div *ngFor="let postItem of postService.getPosts()" [@flyInOut]="'in'">
             <app-post-item [id]="postItem.id" [title]="postItem.title" [content]="postItem.content">
             </app-post-item>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   trigger,
   state,
@@ -44,12 +44,16 @@ import { PostService } from './post/post.service';
     ])
   ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   isModalOpen = false;
+
+  constructor(public postService: PostService) { }
+
+  ngOnInit(): void {
+    this.postService.fetchPosts();
+  }
 
   toggleModalHandler() {
     this.isModalOpen = !this.isModalOpen;
   }
-
-  constructor(public postService: PostService) { }
 }

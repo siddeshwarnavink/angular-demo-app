@@ -12,6 +12,8 @@ import { ModalComponent } from './ui/modal/modal.component';
 import { BackdropComponent } from './ui/backdrop/backdrop.component';
 import { PostEditorComponent } from './post/post-editor/post-editor.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { SpinnerComponent } from './ui/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +24,14 @@ import { FormsModule } from '@angular/forms';
     ButtonComponent,
     ModalComponent,
     BackdropComponent,
-    PostEditorComponent
+    PostEditorComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [
     PostService
