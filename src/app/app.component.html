@@ -1,6 +1,6 @@
 <app-layout>
     <app-modal [isOpen]="isModalOpen" (onClose)="toggleModalHandler()">
-        Modal content
+        <app-post-editor (onCancel)="toggleModalHandler()" (onSubmit)="toggleModalHandler()"></app-post-editor>
     </app-modal>
 
     <ul class="post-list">

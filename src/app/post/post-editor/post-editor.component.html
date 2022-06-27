@@ -1,0 +1,14 @@
+<form (ngSubmit)="onSubmitHandler()">
+    <div class="form-field">
+        <label for="titleInput">Title</label>
+        <input name="titleInput" [(ngModel)]="title" />
+    </div>
+
+    <div class="form-field">
+        <label for="contentInput">Content</label>
+        <textarea name="contentInput" [(ngModel)]="content"></textarea>
+    </div>
+
+    <app-button buttonType="submit">Save</app-button>
+    <app-button theme="danger" (onClick)="onCancelHandler()">Cancel</app-button>
+</form>

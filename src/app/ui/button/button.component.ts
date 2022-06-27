@@ -6,6 +6,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./button.component.css']
 })
 export class ButtonComponent {
+  @Input() buttonType = 'button';
   @Input() theme = 'default';
   @Input() flat = false;
   @Input() fab = false;

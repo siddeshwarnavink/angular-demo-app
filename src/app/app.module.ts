@@ -9,6 +9,8 @@ import { ButtonComponent } from './ui/button/button.component';
 import { PostService } from './post/post.service';
 import { ModalComponent } from './ui/modal/modal.component';
 import { BackdropComponent } from './ui/backdrop/backdrop.component';
+import { PostEditorComponent } from './post/post-editor/post-editor.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,10 +20,12 @@ import { BackdropComponent } from './ui/backdrop/backdrop.component';
     PostItemComponent,
     ButtonComponent,
     ModalComponent,
-    BackdropComponent
+    BackdropComponent,
+    PostEditorComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [
     PostService

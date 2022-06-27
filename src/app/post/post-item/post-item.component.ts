@@ -7,7 +7,7 @@ import { PostService } from '../post.service';
   styleUrls: ['./post-item.component.css']
 })
 export class PostItemComponent {
-  @Input() id!: Number;
+  @Input() id!: number;
   @Input() title!: String;
   @Input() content!: String;
 

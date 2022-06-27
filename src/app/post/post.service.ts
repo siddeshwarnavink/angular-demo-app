@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 interface Post {
-  id: Number,
+  id: number,
   title: String,
   content: String
 }
@@ -27,6 +27,13 @@ export class PostService {
   deletePost(postId: Number) {
     this.postList = this.postList.filter(postItem => {
       return postItem.id !== postId;
+    });
+  }
+
+  addPost(newPost: Post) {
+    this.postList.unshift({
+      ...newPost,
+      id: this.postList[this.postList.length - 1].id + 1,
     });
   }
 
