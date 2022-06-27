@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { PostService } from 'src/app/post/post.service';
 
@@ -7,11 +7,22 @@ import { PostService } from 'src/app/post/post.service';
   templateUrl: './app-navbar.component.html',
   styleUrls: ['./app-navbar.component.css']
 })
-export class AppNavbarComponent implements OnInit {
+export class AppNavbarComponent {
 
-  constructor(public postService: PostService) { }
+  constructor(
+    public postService: PostService,
+  ) { }
 
-  ngOnInit(): void {
-  }
-
+  activeLinkIndex = -1;
+  navLinks = [
+    {
+      label: 'Home',
+      link: './home',
+      index: 0
+    }, {
+      label: 'Favorites',
+      link: './favorites',
+      index: 1
+    },
+  ];
 }

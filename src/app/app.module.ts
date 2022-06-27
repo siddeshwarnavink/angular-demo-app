@@ -18,6 +18,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { FavoritesComponent } from './pages/favorites/favorites.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PostListComponent } from './post/post-list/post-list.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,11 @@ import { PostListComponent } from './post/post-list/post-list.component';
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+
+    // Angular-material modules
+    MatToolbarModule,
+    MatTabsModule
   ],
   providers: [
     PostService

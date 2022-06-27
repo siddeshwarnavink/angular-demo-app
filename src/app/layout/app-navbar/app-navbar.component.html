@@ -1,18 +1,11 @@
-<div class="toolbar">
-    <h1>angular-demo-app</h1>
-
-    <div class="navigation">
-        <a class="navigation-item" routerLinkActive="active" ariaCurrentWhenActive="page" routerLink="/home">
-            Home
-            <span *ngIf="postService.getPosts().length > 0">
-                ({{postService.getPosts().length}})
-            </span>
+<mat-toolbar class="toolbar" color="primary">
+    <div>angular-demo-app</div>
+</mat-toolbar>
+<mat-toolbar class="toolbar">
+    <nav mat-tab-nav-bar>
+        <a mat-tab-link *ngFor="let link of navLinks" [routerLink]="link.link" routerLinkActive #rla="routerLinkActive"
+            [active]="rla.isActive">
+            {{ link.label }}
         </a>
-        <a class="navigation-item" routerLinkActive="active" ariaCurrentWhenActive="page" routerLink="/favorites">
-            Favorites
-            <span *ngIf="postService.getFavPosts().length > 0">
-                ({{postService.getFavPosts().length}})
-            </span>
-        </a>
-    </div>
-</div>
+    </nav>
+</mat-toolbar>

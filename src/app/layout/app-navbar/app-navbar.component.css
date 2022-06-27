@@ -1,32 +1,15 @@
 .toolbar {
-    text-align: center;
-    background-color: rgb(220, 114, 226);
-}
-
-.toolbar h1 {
-    margin: 0;
-    padding: 5px 0;
-}
-
-.toolbar .navigation {
-    display: flex;
-    width: 100%;
     justify-content: center;
 }
 
-.navigation .navigation-item {
-    padding: 10px 12px;
-    text-decoration: none;
-    cursor: pointer;
-    outline: none;
-    color: #000;
+.spacer {
+    flex: 1;
 }
 
-.navigation-item.active {
-    font-weight: bold;
-    border-bottom: 5px solid #000;
+.navbar {
+    border: 0;
 }
 
-.navigation-item:hover {
-    background-color: rgb(213, 98, 219);
+.navbar a.active {
+    color: #fff;
 }
