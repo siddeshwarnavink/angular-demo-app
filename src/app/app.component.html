@@ -1,9 +1,13 @@
 <app-layout>
+    <app-modal [isOpen]="isModalOpen" (onClose)="toggleModalHandler()">
+        Modal content
+    </app-modal>
+
     <ul class="post-list">
         <app-post-item *ngFor="let postItem of postService.getPosts()" [id]="postItem.id" [title]="postItem.title"
             [content]="postItem.content">
         </app-post-item>
     </ul>
 
-    <app-button [fab]="true">+</app-button>
+    <app-button [fab]="true" (onClick)="toggleModalHandler()">+</app-button>
 </app-layout>

@@ -1,0 +1,21 @@
+.modal {
+    position: fixed;
+    background-color: #fff;
+    z-index: 200;
+    left: 35vw;
+    width: 30vw;
+    border-radius: 12px;
+    display: none;
+}
+
+.modal.open {
+    display: block;
+}
+
+.modal-container {
+    padding: 10px;
+}
+
+.modal-close {
+    float: right;
+}

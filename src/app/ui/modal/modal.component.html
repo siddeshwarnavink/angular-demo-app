@@ -1,0 +1,11 @@
+<app-backdrop *ngIf="isOpen" (onClick)="closeModalHandler()"></app-backdrop>
+
+<div [ngClass]="{modal: true, open: isOpen}">
+    <div class="modal-container">
+        <div class="modal-close">
+            <app-button (onClick)="closeModalHandler()">X</app-button>
+        </div>
+
+        <ng-content></ng-content>
+    </div>
+</div>

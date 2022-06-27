@@ -7,6 +7,8 @@ import { AppLayoutComponent } from './layout/app-layout/app-layout.component';
 import { PostItemComponent } from './post/post-item/post-item.component';
 import { ButtonComponent } from './ui/button/button.component';
 import { PostService } from './post/post.service';
+import { ModalComponent } from './ui/modal/modal.component';
+import { BackdropComponent } from './ui/backdrop/backdrop.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { PostService } from './post/post.service';
     AppNavbarComponent,
     AppLayoutComponent,
     PostItemComponent,
-    ButtonComponent
+    ButtonComponent,
+    ModalComponent,
+    BackdropComponent
   ],
   imports: [
     BrowserModule

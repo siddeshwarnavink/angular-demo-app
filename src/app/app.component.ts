@@ -7,5 +7,11 @@ import { PostService } from './post/post.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  isModalOpen = false;
+
+  toggleModalHandler() {    
+    this.isModalOpen = !this.isModalOpen;
+  }
+
   constructor(public postService: PostService) { }
 }
