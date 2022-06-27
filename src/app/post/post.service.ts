@@ -1,10 +1,6 @@
 import { Injectable } from '@angular/core';
 
-interface Post {
-  id: number,
-  title: String,
-  content: String
-}
+import { Post } from '../interface/Post';
 
 @Injectable()
 export class PostService {

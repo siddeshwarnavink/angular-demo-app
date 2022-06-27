@@ -1,7 +1,10 @@
 <li class="post-item">
-    <span class="post-title">{{ title }}</span>
-    <p class="post-content">{{ content }}</p>
+    <div *ngIf="!isEditing">
+        <span class="post-title">{{ title }}</span>
+        <p class="post-content">{{ content }}</p>
 
-    <app-button (onClick)="editPostHandler()">Edit</app-button>
-    <app-button (onClick)="deletePostHandler()" theme="danger" [flat]="true">Delete</app-button>
+        <app-button (onClick)="toggleEditHandler()">Edit</app-button>
+        <app-button (onClick)="deletePostHandler()" theme="danger" [flat]="true">Delete</app-button>
+    </div>
+    <app-post-editor *ngIf="isEditing" [postId]="this.id" (onCancel)="toggleEditHandler()"></app-post-editor>
 </li>

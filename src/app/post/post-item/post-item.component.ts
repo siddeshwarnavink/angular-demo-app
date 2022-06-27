@@ -11,7 +11,13 @@ export class PostItemComponent {
   @Input() title!: String;
   @Input() content!: String;
 
+  isEditing = false;
+
   constructor(private postService: PostService) { }
+
+  toggleEditHandler() {
+    this.isEditing = !this.isEditing;
+  }
 
   editPostHandler() {
     this.postService.editPost(this.id, {
