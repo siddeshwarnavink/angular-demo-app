@@ -3,7 +3,7 @@
 <div *ngIf="isOpen" @modalAnimation class="modal">
     <div class="modal-container">
         <div class="modal-close">
-            <app-button (onClick)="closeModalHandler()">X</app-button>
+            <button mat-button (click)="closeModalHandler()">X</button>
         </div>
 
         <ng-content></ng-content>

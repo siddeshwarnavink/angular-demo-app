@@ -9,6 +9,6 @@
         <textarea name="contentInput" [(ngModel)]="content"></textarea>
     </div>
 
-    <app-button buttonType="submit">Save</app-button>
-    <app-button theme="danger" (onClick)="onCancelHandler()">Cancel</app-button>
+    <button mat-raised-button color="primary">Save</button>
+    <button mat-button (click)="onCancelHandler()" type="button">Cancel</button>
 </form>
