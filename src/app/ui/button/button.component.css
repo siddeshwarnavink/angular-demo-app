@@ -1,0 +1,43 @@
+.button {
+    border: 0;
+    padding: 12px 21px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 12px;
+    outline: none;
+}
+
+.button.default {
+    color: #000;
+    background-color: rgb(220, 114, 226);
+}
+
+.button.danger {
+    color: #fff;
+    background-color: rgb(218, 58, 58);
+}
+
+.button.flat {
+    background-color: transparent !important;
+    text-transform: uppercase;
+}
+
+.button.flat.default {
+    color: rgb(220, 114, 226);
+}
+
+.button.flat.danger {
+    color: rgb(218, 58, 58);
+}
+
+.button.fab {
+    border-radius: 100%;
+    font-weight: bold;
+    /* width: 5px; */
+    padding: 12px 21px;
+    font-size: 2em;
+    position: fixed;
+    bottom: 5vh;
+    right: 5vw;
+}

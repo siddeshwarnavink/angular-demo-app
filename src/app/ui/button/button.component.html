@@ -1,0 +1,9 @@
+<button [ngClass]="{
+    button: true,
+    default: this.theme === 'default',
+    danger: this.theme === 'danger',
+    flat: this.flat,
+    fab: this.fab
+  }">
+    <ng-content></ng-content>
+</button>
