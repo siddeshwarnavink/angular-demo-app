@@ -4,9 +4,10 @@
     </app-modal>
 
     <ul class="post-list">
-        <app-post-item *ngFor="let postItem of postService.getPosts()" [id]="postItem.id" [title]="postItem.title"
-            [content]="postItem.content">
-        </app-post-item>
+        <div *ngFor="let postItem of postService.getPosts()" [@flyInOut]="'in'">
+            <app-post-item [id]="postItem.id" [title]="postItem.title" [content]="postItem.content">
+            </app-post-item>
+        </div>
     </ul>
 
     <app-button [fab]="true" (onClick)="toggleModalHandler()">+</app-button>
