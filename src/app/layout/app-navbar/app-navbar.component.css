@@ -1,15 +1,17 @@
-.toolbar {
-    justify-content: center;
+a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    margin-right: 12px;
 }
 
-.spacer {
-    flex: 1;
+a:hover,
+a:active {
+    color: lightgray;
 }
 
-.navbar {
-    border: 0;
-}
-
-.navbar a.active {
-    color: #fff;
+.navigation-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }

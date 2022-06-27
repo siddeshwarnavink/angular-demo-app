@@ -1,11 +1,9 @@
-<mat-toolbar class="toolbar" color="primary">
-    <div>angular-demo-app</div>
-</mat-toolbar>
-<mat-toolbar class="toolbar">
-    <nav mat-tab-nav-bar>
-        <a mat-tab-link *ngFor="let link of navLinks" [routerLink]="link.link" routerLinkActive #rla="routerLinkActive"
-            [active]="rla.isActive">
-            {{ link.label }}
-        </a>
-    </nav>
+<mat-toolbar color="primary">
+    <div> <a routerLink="/">angular-demo-app</a></div>
+    <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+        <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+            <li><a routerLink="/home">Home</a></li>
+            <li><a routerLink="/favorites">Favourite</a></li>
+        </ul>
+    </div>
 </mat-toolbar>
