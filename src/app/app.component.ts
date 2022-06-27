@@ -7,9 +7,5 @@ import { PostService } from './post/post.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  postService;
-
-  constructor(postService: PostService) { 
-    this.postService = postService;
-  }
+  constructor(public postService: PostService) { }
 }

@@ -6,9 +6,7 @@ interface Post {
   content: String
 }
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class PostService {
   postList: Post[] = [
     { id: 1, title: 'Hello', content: 'my awesome content' },
@@ -17,6 +15,19 @@ export class PostService {
 
   getPosts() {
     return this.postList;
+  }
+
+  editPost(postId: Number, newPost: Post) {
+    this.postList = this.postList.map(postItem => {
+      if (postItem.id !== postId) return postItem;
+      return newPost;
+    });
+  }
+
+  deletePost(postId: Number) {
+    this.postList = this.postList.filter(postItem => {
+      return postItem.id !== postId;
+    });
   }
 
   constructor() { }

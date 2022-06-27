@@ -6,6 +6,7 @@ import { AppNavbarComponent } from './layout/app-navbar/app-navbar.component';
 import { AppLayoutComponent } from './layout/app-layout/app-layout.component';
 import { PostItemComponent } from './post/post-item/post-item.component';
 import { ButtonComponent } from './ui/button/button.component';
+import { PostService } from './post/post.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { ButtonComponent } from './ui/button/button.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    PostService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

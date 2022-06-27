@@ -1,6 +1,6 @@
 <app-layout>
     <ul class="post-list">
-        <app-post-item *ngFor="let postItem of postService.getPosts()" [title]="postItem.title"
+        <app-post-item *ngFor="let postItem of postService.getPosts()" [id]="postItem.id" [title]="postItem.title"
             [content]="postItem.content">
         </app-post-item>
     </ul>

@@ -1,17 +1,28 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { PostService } from '../post.service';
 
 @Component({
   selector: 'app-post-item',
   templateUrl: './post-item.component.html',
   styleUrls: ['./post-item.component.css']
 })
-export class PostItemComponent implements OnInit {
+export class PostItemComponent {
+  @Input() id!: Number;
   @Input() title!: String;
   @Input() content!: String;
 
-  constructor() { }
+  constructor(private postService: PostService) { }
 
-  ngOnInit(): void {
+  editPostHandler() {
+    this.postService.editPost(this.id, {
+      id: this.id,
+      title: 'Updated',
+      content: 'This is cool!'
+    });
+  }
+
+  deletePostHandler() {
+    this.postService.deletePost(this.id);
   }
 
 }
