@@ -19,7 +19,9 @@ export class HomeComponent implements OnInit {
   constructor(public postService: PostService) { }
 
   ngOnInit(): void {
-    this.postService.fetchPosts();
+    if (this.postService.postList.length < 1) {
+      this.postService.fetchPosts();
+    }
   }
 
   toggleModalHandler() {
