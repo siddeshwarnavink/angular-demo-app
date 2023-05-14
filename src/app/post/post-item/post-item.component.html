@@ -4,8 +4,8 @@
             <div class="post-detail">
                 <h2>{{ title }}</h2>
                 <p>{{ content }}</p>
-                <app-button (onClick)="toggleEditHandler()">Edit</app-button>
-                <app-button (onClick)="deletePostHandler()" theme="danger" [flat]="true">Delete</app-button>
+                <app-button *ngIf="!isFav" (onClick)="toggleEditHandler()">Edit</app-button>
+                <app-button *ngIf="!isFav" (onClick)="deletePostHandler()" theme="danger" [flat]="true">Delete</app-button>
                 <app-button (onClick)="markAsFavPostHandler()" [flat]="true">
                     <span *ngIf="!isFav">⭐</span>
                     <span *ngIf="isFav">❌</span>
