@@ -74,9 +74,10 @@ export class PostService {
   }
 
   addPost(newPost: Post) {
+    const postId = this.postList.length > 0 ? this.postList[this.postList.length - 1].id + 1 : 0
     this.postList.unshift({
       ...newPost,
-      id: this.postList[this.postList.length - 1].id + 1,
+      id: postId,
     });
 
     this.http.post(`${this.baseURL}/posts`, {
